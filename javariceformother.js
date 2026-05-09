@@ -216,7 +216,20 @@ audio.addEventListener("error", () => {
   setPlayingState(false);
 });
 
-window.addEventListener("load", tryAutoplay);
-document.addEventListener("pointerdown", tryAutoplay, { once: true });
-document.addEventListener("keydown", tryAutoplay, { once: true });
+let unlocked = false;
+
+async function unlockAudio() {
+  if (unlocked) return;
+
+  try {
+    await audio.play();
+    unlocked = true;
+    setPlayingState(true);
+  } catch (err) {
+    console.log("Still blocked:", err);
+  }
+}
+
+document.addEventListener("pointerdown", unlockAudio, { once: true });
+document.addEventListener("keydown", unlockAudio, { once: true });
 
