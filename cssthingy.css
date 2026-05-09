@@ -35,6 +35,9 @@ body{
     box-shadow:var(--shadow);
     position:relative;
     overflow:hidden;
+
+    display:flex;
+    flex-direction:column;
 }
 
 .letter::before{
@@ -174,6 +177,10 @@ button:hover{
     position:relative;
     z-index:2;
     align-self:stretch;
+
+    width:100%;
+    margin-left:0;
+    margin-right:0;
 }
 
 .disc{
