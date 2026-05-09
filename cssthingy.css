@@ -329,12 +329,6 @@ button:hover{
     }
 }
 
-  :root {
-    --bg:#050505;
-    --past:#8a5a33;
-    --future:#78c9ff;
-  }
-
   * { box-sizing:border-box; }
 
 
