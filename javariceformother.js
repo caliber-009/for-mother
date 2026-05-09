@@ -117,3 +117,84 @@ function generateMessage(){
         box.style.opacity = 1;
     }, 150);
 }
+
+/* audio dock */
+
+const audio = document.getElementById("audio");
+const playBtn = document.getElementById("playBtn");
+const disc = document.getElementById("disc");
+const note = document.querySelector(".note-icon");
+const seekBar = document.getElementById("seekBar");
+
+const currentTimeEl = document.getElementById("currentTime");
+const durationEl = document.getElementById("duration");
+const trackName = document.getElementById("trackName");
+
+const audioSrc = audio.querySelector("source").src;
+
+const cleanName = audioSrc
+    .split("/")
+    .pop()
+    .replace(/\.[^/.]+$/, "");
+
+trackName.textContent = cleanName;
+
+playBtn.addEventListener("click", () => {
+
+    if(audio.paused){
+        audio.play();
+    } else {
+        audio.pause();
+    }
+
+});
+
+audio.addEventListener("play", () => {
+
+    playBtn.innerHTML = "❚❚";
+
+    disc.classList.remove("paused");
+    note.classList.remove("paused");
+
+});
+
+audio.addEventListener("pause", () => {
+
+    playBtn.innerHTML = "▶";
+
+    disc.classList.add("paused");
+    note.classList.add("paused");
+
+});
+
+audio.addEventListener("loadedmetadata", () => {
+
+    seekBar.max = audio.duration;
+
+    durationEl.textContent = formatTime(audio.duration);
+
+});
+
+audio.addEventListener("timeupdate", () => {
+
+    seekBar.value = audio.currentTime;
+
+    currentTimeEl.textContent = formatTime(audio.currentTime);
+
+});
+
+seekBar.addEventListener("input", () => {
+
+    audio.currentTime = seekBar.value;
+
+});
+
+function formatTime(time){
+
+    const mins = Math.floor(time / 60);
+    const secs = Math.floor(time % 60)
+        .toString()
+        .padStart(2,"0");
+
+    return `${mins}:${secs}`;
+}
