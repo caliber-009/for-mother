@@ -59,34 +59,48 @@
 
 </div>
 
-<div class="audio-player">
+<div class="audio-top">
 
     <img src="./images/disc.png" class="disc paused" id="disc" alt="disc">
 
     <div class="track-info">
-        <div class="track-name" id="trackName">
-            your-audio-file
+
+        <div class="track-row">
+
+            <img src="./images/note.png" class="note-icon paused" alt="note">
+
+            <div class="track-name" id="trackName">
+                your-audio-file
+            </div>
+
         </div>
 
         <input type="range" id="seekBar" value="0" min="0" max="100">
-        
+
         <div class="time">
             <span id="currentTime">0:00</span>
             <span id="duration">0:00</span>
         </div>
+
     </div>
 
-    <img src="./images/note.png" class="note-icon paused" alt="note">
+</div>
 
-    <button class="play-btn" id="playBtn">
+<div class="audio-controls">
+
+    <button class="circle-btn" id="playBtn">
         ▶
     </button>
 
-    <audio id="audio">
-        <source src="./audio/mothersday.mp3" type="audio/mpeg">
-    </audio>
+    <button class="circle-btn" id="muteBtn">
+        🔊
+    </button>
 
 </div>
+
+<audio id="audio">
+    <source src="./audio/mothersday.mp3" type="audio/mpeg">
+</audio>
 
 <script src="javariceformother.js"></script>
 
