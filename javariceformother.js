@@ -216,20 +216,33 @@ audio.addEventListener("error", () => {
   setPlayingState(false);
 });
 
+const audio = document.getElementById("audio");
+const playBtn = document.getElementById("playBtn");
 let unlocked = false;
 
 async function unlockAudio() {
   if (unlocked) return;
-
   try {
     await audio.play();
     unlocked = true;
     setPlayingState(true);
   } catch (err) {
-    console.log("Still blocked:", err);
+    console.log("Playback still blocked:", err);
   }
 }
 
+playBtn.addEventListener("click", async () => {
+  try {
+    if (audio.paused) {
+      await audio.play();
+      unlocked = true;
+    } else {
+      audio.pause();
+    }
+  } catch (err) {
+    console.error("Audio play failed:", err);
+  }
+});
+
 document.addEventListener("pointerdown", unlockAudio, { once: true });
 document.addEventListener("keydown", unlockAudio, { once: true });
-
