@@ -122,101 +122,88 @@ function generateMessage(){
 
 const audio = document.getElementById("audio");
 const playBtn = document.getElementById("playBtn");
+const muteBtn = document.getElementById("muteBtn");
 const disc = document.getElementById("disc");
 const note = document.querySelector(".note-icon");
 const seekBar = document.getElementById("seekBar");
-
 const currentTimeEl = document.getElementById("currentTime");
 const durationEl = document.getElementById("duration");
 const trackName = document.getElementById("trackName");
 
-const audioSrc = audio.querySelector("source").src;
+const sourceEl = audio.querySelector("source");
+const audioSrc = sourceEl ? sourceEl.getAttribute("src") || "" : "";
 
 const cleanName = audioSrc
-    .split("/")
-    .pop()
-    .replace(/\.[^/.]+$/, "");
+  .split("/")
+  .pop()
+  .replace(/\.[^/.]+$/, "");
 
-trackName.textContent = cleanName;
+trackName.textContent = cleanName || "audio file";
 
-playBtn.addEventListener("click", () => {
+audio.preload = "metadata";
+audio.load();
 
-    if(audio.paused){
-        audio.play();
+function formatTime(time) {
+  if (!isFinite(time) || time < 0) return "0:00";
+  const mins = Math.floor(time / 60);
+  const secs = Math.floor(time % 60).toString().padStart(2, "0");
+  return `${mins}:${secs}`;
+}
+
+function setPlayingState(isPlaying) {
+  playBtn.textContent = isPlaying ? "❚❚" : "▶";
+  disc.classList.toggle("paused", !isPlaying);
+  note.classList.toggle("paused", !isPlaying);
+}
+
+playBtn.addEventListener("click", async () => {
+  try {
+    if (audio.paused) {
+      await audio.play();
     } else {
-        audio.pause();
+      audio.pause();
     }
-
+  } catch (err) {
+    console.error("Audio play failed:", err);
+    trackName.textContent = "Audio failed to load";
+    playBtn.textContent = "!";
+    setPlayingState(false);
+  }
 });
 
 audio.addEventListener("play", () => {
-
-    playBtn.innerHTML = "❚❚";
-
-    disc.classList.remove("paused");
-    note.classList.remove("paused");
-
+  setPlayingState(true);
 });
 
 audio.addEventListener("pause", () => {
-
-    playBtn.innerHTML = "▶";
-
-    disc.classList.add("paused");
-    note.classList.add("paused");
-
+  setPlayingState(false);
 });
 
 audio.addEventListener("loadedmetadata", () => {
-
+  if (isFinite(audio.duration)) {
     seekBar.max = audio.duration;
-
     durationEl.textContent = formatTime(audio.duration);
-
+  }
 });
 
 audio.addEventListener("timeupdate", () => {
-
-    seekBar.value = audio.currentTime;
-
-    currentTimeEl.textContent = formatTime(audio.currentTime);
-
+  seekBar.value = audio.currentTime;
+  currentTimeEl.textContent = formatTime(audio.currentTime);
 });
 
 seekBar.addEventListener("input", () => {
-
-    audio.currentTime = seekBar.value;
-
+  audio.currentTime = Number(seekBar.value);
 });
-
-function formatTime(time){
-
-    const mins = Math.floor(time / 60);
-    const secs = Math.floor(time % 60)
-        .toString()
-        .padStart(2,"0");
-
-    return `${mins}:${secs}`;
-}
-
-const muteBtn = document.getElementById("muteBtn");
 
 muteBtn.addEventListener("click", () => {
-
-    audio.muted = !audio.muted;
-
-    muteBtn.innerHTML = audio.muted ? "🔇" : "🔊";
-
+  audio.muted = !audio.muted;
+  muteBtn.textContent = audio.muted ? "🔇" : "🔊";
 });
 
-playBtn.addEventListener("click", async () => {
-    try {
-        if (audio.paused) {
-            await audio.play();
-        } else {
-            audio.pause();
-        }
-    } catch (err) {
-        console.log("Play blocked:", err);
-    }
+audio.addEventListener("error", () => {
+  const code = audio.error?.code;
+  console.error("Audio element error:", code, audio.error);
+  trackName.textContent = "Audio file not found";
+  playBtn.textContent = "!";
+  setPlayingState(false);
 });
