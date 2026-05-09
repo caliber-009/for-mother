@@ -207,3 +207,17 @@ audio.addEventListener("error", () => {
   playBtn.textContent = "!";
   setPlayingState(false);
 });
+
+console.log("script loaded", audio.currentSrc);
+
+playBtn.addEventListener("click", async () => {
+  try {
+    await audio.play();
+  } catch (err) {
+    console.error("play() failed:", err, "src:", audio.currentSrc);
+  }
+});
+
+audio.addEventListener("error", () => {
+  console.error("media error:", audio.error?.code, audio.currentSrc);
+});
