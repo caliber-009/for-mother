@@ -343,9 +343,6 @@ button:hover{
     background:var(--bg);
     border:1px solid rgba(255,255,255,.06);
     border-radius:28px;
-    box-shadow:
-      0 0 0 1px rgba(255,255,255,.03) inset,
-      0 30px 100px rgba(0,0,0,.72);
     padding:20px 18px 22px;
     overflow:hidden;
   }
@@ -356,11 +353,6 @@ button:hover{
     aspect-ratio:1536 / 691;
     overflow:hidden;
     border-radius:22px;
-    background:
-      radial-gradient(circle at 50% 47%, rgba(255,255,255,.06), transparent 16%),
-      radial-gradient(circle at 20% 50%, rgba(138,90,51,.16), transparent 22%),
-      radial-gradient(circle at 80% 50%, rgba(120,200,255,.16), transparent 22%),
-      linear-gradient(180deg, #090909 0%, #030303 100%);
   }
 
   .stage::before {
