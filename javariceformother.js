@@ -1,125 +1,122 @@
 const messages = [
-
-"You make every hard day feel lighter.",
-"Thank you for always believing in me.",
-"You deserve all the happiness in the world.",
-"Your kindness changes lives every day.",
-"You are stronger than you think.",
-"You are deeply appreciated.",
-"You make home feel safe.",
-"Your love means everything.",
-"The world is brighter because of you.",
-"You inspire people without realizing it.",
-"You deserve peace and joy.",
-"Your smile comforts everyone around you.",
-"You are truly irreplaceable.",
-"You’ve done more than enough.",
-"You are loved beyond words.",
-"You make ordinary days beautiful.",
-"Your care never goes unnoticed.",
-"You are the heart of this family.",
-"Thank you for your endless support.",
-"You are someone people admire deeply.",
-"You deserve time to rest and smile.",
-"You always make things better.",
-"You are incredibly strong.",
-"Your warmth is unforgettable.",
-"You deserve to feel proud of yourself.",
-"You are a wonderful mother.",
-"You are more appreciated than you know.",
-"You give people hope.",
-"You are amazing exactly as you are.",
-"Your efforts matter every single day.",
-"You make people feel understood.",
-"You deserve endless flowers and hugs.",
-"You bring comfort to everyone.",
-"Your patience is admirable.",
-"You are someone worth celebrating.",
-"You are the definition of care.",
-"You make life feel gentler.",
-"You deserve all the appreciation today.",
-"You always know how to help.",
-"Thank you for every sacrifice.",
-"You are truly precious.",
-"You deserve every good thing coming your way.",
-"Your love leaves lasting memories.",
-"You make difficult moments easier.",
-"You are the reason many smiles exist.",
-"Your presence alone is comforting.",
-"You are one of the strongest people I know.",
-"You deserve happiness every day.",
-"You make people feel safe and loved.",
-"Your compassion is beautiful.",
-"You are a blessing to many.",
-"You always give your best.",
-"You deserve kindness in return too.",
-"You are cherished so much.",
-"You are more than enough.",
-"Thank you for never giving up.",
-"You make life feel warmer.",
-"You deserve peaceful days.",
-"Your love is unforgettable.",
-"You make everyone around you stronger.",
-"You are deeply valued.",
-"You deserve appreciation every day.",
-"You are someone truly special.",
-"You have a beautiful heart.",
-"Your efforts mean everything.",
-"You make memories worth keeping.",
-"You are endlessly caring.",
-"You deserve laughter and rest.",
-"Your support changes lives.",
-"You are incredibly important.",
-"You bring calm into chaos.",
-"You deserve gentle and happy moments.",
-"You are one of a kind.",
-"You make people feel welcome.",
-"You are full of strength and grace.",
-"You deserve endless gratitude.",
-"Your kindness leaves a lasting impact.",
-"You make every place feel like home.",
-"You are appreciated more than words can say.",
-"You deserve all the flowers today.",
-"You are a wonderful person inside and out.",
-"You make the world softer.",
-"You deserve moments of pure happiness.",
-"You are someone people can rely on.",
-"Your love is powerful.",
-"You are worthy of appreciation.",
-"You deserve every heartfelt thank you.",
-"You make difficult days survivable.",
-"You are a source of comfort.",
-"You deserve beautiful memories.",
-"You are stronger than every challenge.",
-"You bring peace to others.",
-"You deserve warmth and care too.",
-"You make people feel loved.",
-"You are truly remarkable.",
-"You deserve joy that lasts.",
-"You are appreciated beyond measure.",
-"You make life brighter.",
-"You deserve all the good things ahead.",
-"You are loved endlessly.",
-"Thank you for simply being you.",
-"You are the light of many lives.",
-"You deserve the happiest Mother’s Day ever."
-
+  "You make every hard day feel lighter.",
+  "Thank you for always believing in me.",
+  "You deserve all the happiness in the world.",
+  "Your kindness changes lives every day.",
+  "You are stronger than you think.",
+  "You are deeply appreciated.",
+  "You make home feel safe.",
+  "Your love means everything.",
+  "The world is brighter because of you.",
+  "You inspire people without realizing it.",
+  "You deserve peace and joy.",
+  "Your smile comforts everyone around you.",
+  "You are truly irreplaceable.",
+  "You’ve done more than enough.",
+  "You are loved beyond words.",
+  "You make ordinary days beautiful.",
+  "Your care never goes unnoticed.",
+  "You are the heart of this family.",
+  "Thank you for your endless support.",
+  "You are someone people admire deeply.",
+  "You deserve time to rest and smile.",
+  "You always make things better.",
+  "You are incredibly strong.",
+  "Your warmth is unforgettable.",
+  "You deserve to feel proud of yourself.",
+  "You are a wonderful mother.",
+  "You are more appreciated than you know.",
+  "You give people hope.",
+  "You are amazing exactly as you are.",
+  "Your efforts matter every single day.",
+  "You make people feel understood.",
+  "You deserve endless flowers and hugs.",
+  "You bring comfort to everyone.",
+  "Your patience is admirable.",
+  "You are someone worth celebrating.",
+  "You are the definition of care.",
+  "You make life feel gentler.",
+  "You deserve all the appreciation today.",
+  "You always know how to help.",
+  "Thank you for every sacrifice.",
+  "You are truly precious.",
+  "You deserve every good thing coming your way.",
+  "Your love leaves lasting memories.",
+  "You make difficult moments easier.",
+  "You are the reason many smiles exist.",
+  "Your presence alone is comforting.",
+  "You are one of the strongest people I know.",
+  "You deserve happiness every day.",
+  "You make people feel safe and loved.",
+  "Your compassion is beautiful.",
+  "You are a blessing to many.",
+  "You always give your best.",
+  "You deserve kindness in return too.",
+  "You are cherished so much.",
+  "You are more than enough.",
+  "Thank you for never giving up.",
+  "You make life feel warmer.",
+  "You deserve peaceful days.",
+  "Your love is unforgettable.",
+  "You make everyone around you stronger.",
+  "You are deeply valued.",
+  "You deserve appreciation every day.",
+  "You are someone truly special.",
+  "You have a beautiful heart.",
+  "Your efforts mean everything.",
+  "You make memories worth keeping.",
+  "You are endlessly caring.",
+  "You deserve laughter and rest.",
+  "Your support changes lives.",
+  "You are incredibly important.",
+  "You bring calm into chaos.",
+  "You deserve gentle and happy moments.",
+  "You are one of a kind.",
+  "You make people feel welcome.",
+  "You are full of strength and grace.",
+  "You deserve endless gratitude.",
+  "Your kindness leaves a lasting impact.",
+  "You make every place feel like home.",
+  "You are appreciated more than words can say.",
+  "You deserve all the flowers today.",
+  "You are a wonderful person inside and out.",
+  "You make the world softer.",
+  "You deserve moments of pure happiness.",
+  "You are someone people can rely on.",
+  "Your love is powerful.",
+  "You are worthy of appreciation.",
+  "You deserve every heartfelt thank you.",
+  "You make difficult days survivable.",
+  "You are a source of comfort.",
+  "You deserve beautiful memories.",
+  "You are stronger than every challenge.",
+  "You bring peace to others.",
+  "You deserve warmth and care too.",
+  "You make people feel loved.",
+  "You are truly remarkable.",
+  "You deserve joy that lasts.",
+  "You are appreciated beyond measure.",
+  "You make life brighter.",
+  "You deserve all the good things ahead.",
+  "You are loved endlessly.",
+  "Thank you for simply being you.",
+  "You are the light of many lives.",
+  "You deserve the happiest Mother’s Day ever."
 ];
 
-function generateMessage(){
-    const box = document.getElementById("messageBox");
-    const random = messages[Math.floor(Math.random() * messages.length)];
+function generateMessage() {
+  const box = document.getElementById("messageBox");
+  const random = messages[Math.floor(Math.random() * messages.length)];
 
-    box.style.opacity = 0;
+  box.style.opacity = "0";
 
-    setTimeout(() => {
-        box.innerHTML = random;
-        box.style.opacity = 1;
-    }, 150);
+  setTimeout(() => {
+    box.textContent = random;
+    box.style.opacity = "1";
+  }, 150);
 }
 
 /* audio dock */
-
 const audio = document.getElementById("audio");
 const playBtn = document.getElementById("playBtn");
 const muteBtn = document.getElementById("muteBtn");
@@ -131,7 +128,7 @@ const durationEl = document.getElementById("duration");
 const trackName = document.getElementById("trackName");
 
 const sourceEl = audio.querySelector("source");
-const audioSrc = sourceEl ? sourceEl.getAttribute("src") || "" : "";
+const audioSrc = sourceEl ? (sourceEl.getAttribute("src") || "") : "";
 
 const cleanName = audioSrc
   .split("/")
@@ -141,8 +138,8 @@ const cleanName = audioSrc
 trackName.textContent = cleanName || "audio file";
 
 audio.preload = "auto";
-audio.autoplay = true;
-audio.load();
+audio.loop = true;
+audio.playsInline = true;
 
 function formatTime(time) {
   if (!isFinite(time) || time < 0) return "0:00";
@@ -157,11 +154,34 @@ function setPlayingState(isPlaying) {
   note.classList.toggle("paused", !isPlaying);
 }
 
-async function tryAutoplay() {
+async function startAudio() {
   try {
     await audio.play();
+    setPlayingState(true);
   } catch (err) {
-    console.log("Autoplay blocked until user interaction:", err);
+    console.log("Autoplay blocked:", err);
+    setPlayingState(false);
+  }
+}
+
+async function tryMutedAutoplay() {
+  try {
+    audio.muted = true;
+    await audio.play();
+    setPlayingState(true);
+
+    const unmuteOnFirstGesture = () => {
+      audio.muted = false;
+      muteBtn.textContent = "🔊";
+      document.removeEventListener("pointerdown", unmuteOnFirstGesture);
+      document.removeEventListener("keydown", unmuteOnFirstGesture);
+    };
+
+    document.addEventListener("pointerdown", unmuteOnFirstGesture, { once: true });
+    document.addEventListener("keydown", unmuteOnFirstGesture, { once: true });
+  } catch (err) {
+    console.log("Muted autoplay blocked:", err);
+    setPlayingState(false);
   }
 }
 
@@ -188,14 +208,14 @@ audio.addEventListener("pause", () => {
 });
 
 audio.addEventListener("loadedmetadata", () => {
-  if (isFinite(audio.duration)) {
-    seekBar.max = audio.duration;
+  if (isFinite(audio.duration) && audio.duration > 0) {
+    seekBar.max = String(audio.duration);
     durationEl.textContent = formatTime(audio.duration);
   }
 });
 
 audio.addEventListener("timeupdate", () => {
-  seekBar.value = audio.currentTime;
+  seekBar.value = String(audio.currentTime);
   currentTimeEl.textContent = formatTime(audio.currentTime);
 });
 
@@ -209,40 +229,13 @@ muteBtn.addEventListener("click", () => {
 });
 
 audio.addEventListener("error", () => {
-  const code = audio.error?.code;
+  const code = audio.error ? audio.error.code : "unknown";
   console.error("Audio element error:", code, audio.error);
   trackName.textContent = "Audio file not found";
   playBtn.textContent = "!";
   setPlayingState(false);
 });
 
-const audio = document.getElementById("audio");
-const playBtn = document.getElementById("playBtn");
-let unlocked = false;
-
-async function unlockAudio() {
-  if (unlocked) return;
-  try {
-    await audio.play();
-    unlocked = true;
-    setPlayingState(true);
-  } catch (err) {
-    console.log("Playback still blocked:", err);
-  }
-}
-
-playBtn.addEventListener("click", async () => {
-  try {
-    if (audio.paused) {
-      await audio.play();
-      unlocked = true;
-    } else {
-      audio.pause();
-    }
-  } catch (err) {
-    console.error("Audio play failed:", err);
-  }
-});
-
-document.addEventListener("pointerdown", unlockAudio, { once: true });
-document.addEventListener("keydown", unlockAudio, { once: true });
+window.addEventListener("load", tryMutedAutoplay);
+document.addEventListener("pointerdown", startAudio, { once: true });
+document.addEventListener("keydown", startAudio, { once: true });
