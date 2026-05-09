@@ -212,12 +212,19 @@ muteBtn.addEventListener("click", () => {
 window.addEventListener("load", async () => {
 
     try{
+
+        audio.muted = true;
+
         await audio.play();
 
-        audio.muted = false;
+        setTimeout(() => {
+            audio.muted = false;
+        }, 500);
 
     } catch(err){
+
         console.log("Autoplay blocked");
+
     }
 
 });
