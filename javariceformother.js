@@ -208,3 +208,16 @@ muteBtn.addEventListener("click", () => {
     muteBtn.innerHTML = audio.muted ? "🔇" : "🔊";
 
 });
+
+window.addEventListener("load", async () => {
+
+    try{
+        await audio.play();
+
+        audio.muted = false;
+
+    } catch(err){
+        console.log("Autoplay blocked");
+    }
+
+});
