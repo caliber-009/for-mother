@@ -198,3 +198,13 @@ function formatTime(time){
 
     return `${mins}:${secs}`;
 }
+
+const muteBtn = document.getElementById("muteBtn");
+
+muteBtn.addEventListener("click", () => {
+
+    audio.muted = !audio.muted;
+
+    muteBtn.innerHTML = audio.muted ? "🔇" : "🔊";
+
+});
