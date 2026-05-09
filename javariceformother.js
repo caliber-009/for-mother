@@ -216,7 +216,6 @@ audio.addEventListener("error", () => {
   setPlayingState(false);
 });
 
-/* autoplay unlock */
 window.addEventListener("load", tryAutoplay);
 document.addEventListener("pointerdown", tryAutoplay, { once: true });
 document.addEventListener("keydown", tryAutoplay, { once: true });
