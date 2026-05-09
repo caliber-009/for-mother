@@ -221,3 +221,13 @@ playBtn.addEventListener("click", async () => {
 audio.addEventListener("error", () => {
   console.error("media error:", audio.error?.code, audio.currentSrc);
 });
+
+window.addEventListener("load", async () => {
+  try {
+    await audio.play();
+    audio.muted = false;
+    setPlayingState(true);
+  } catch (e) {
+    console.log("Autoplay blocked by browser");
+  }
+});
