@@ -432,7 +432,7 @@ button:hover{
     text-align:center;
     font-size:1.08rem;
     line-height:1.85;
-    color:rgba(255,255,255,.9);
+    color:rgba(0,0,0,.9);
     text-shadow:0 0 10px rgba(255,255,255,.08);
   }
   
