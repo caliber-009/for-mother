@@ -59,27 +59,40 @@
 
 </div>
 
-<div class="audio-top">
+<div class="audio-player">
 
-    <img src="./images/disc.png" class="disc paused" id="disc" alt="disc">
+    <div class="audio-top">
 
-    <div class="track-info">
+        <img src="./images/disc.png"
+             class="disc paused"
+             id="disc"
+             alt="disc">
 
-        <div class="track-row">
+        <div class="track-info">
 
-            <img src="./images/note.png" class="note-icon paused" alt="note">
+            <div class="track-row">
 
-            <div class="track-name" id="trackName">
-                your-audio-file
+                <img src="./images/note.png"
+                     class="note-icon paused"
+                     alt="note">
+
+                <div class="track-name" id="trackName">
+                    your-audio-file
+                </div>
+
             </div>
 
-        </div>
+            <input type="range"
+                   id="seekBar"
+                   value="0"
+                   min="0"
+                   max="100">
 
-        <input type="range" id="seekBar" value="0" min="0" max="100">
+            <div class="time">
+                <span id="currentTime">0:00</span>
+                <span id="duration">0:00</span>
+            </div>
 
-        <div class="time">
-            <span id="currentTime">0:00</span>
-            <span id="duration">0:00</span>
         </div>
 
     </div>
@@ -91,16 +104,16 @@
         </button>
 
         <button class="circle-btn" id="muteBtn">
-        🔊
+            🔊
         </button>
 
-     </div>
+    </div>
 
-    <audio id="audio" autoplay muted>
-        <source src="./audio/mothersday.mp3" type="audio/mpeg">
+    <audio id="audio" autoplay muted loop>
+        <source src="./audio/mothersday.mp3"
+                type="audio/mpeg">
     </audio>
 
-    </div>
 </div>
 
 
