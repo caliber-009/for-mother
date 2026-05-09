@@ -21,7 +21,7 @@ body{
         var(--bg);
     display:flex;
     justify-content:center;
-    align-items:center;
+    align-items:flex-start;
     padding:40px 20px;
     font-family:"Inter", sans-serif;
     color:var(--text);
@@ -313,11 +313,6 @@ button:hover{
     display:flex;
     align-items:center;
     gap:10px;
-    min-width:0;
-}
-
-.track-info{
-    flex:1;
     min-width:0;
 }
 
