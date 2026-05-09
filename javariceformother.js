@@ -140,7 +140,8 @@ const cleanName = audioSrc
 
 trackName.textContent = cleanName || "audio file";
 
-audio.preload = "metadata";
+audio.preload = "auto";
+audio.autoplay = true;
 audio.load();
 
 function formatTime(time) {
@@ -156,6 +157,14 @@ function setPlayingState(isPlaying) {
   note.classList.toggle("paused", !isPlaying);
 }
 
+async function tryAutoplay() {
+  try {
+    await audio.play();
+  } catch (err) {
+    console.log("Autoplay blocked until user interaction:", err);
+  }
+}
+
 playBtn.addEventListener("click", async () => {
   try {
     if (audio.paused) {
@@ -166,7 +175,6 @@ playBtn.addEventListener("click", async () => {
   } catch (err) {
     console.error("Audio play failed:", err);
     trackName.textContent = "Audio failed to load";
-    playBtn.textContent = "!";
     setPlayingState(false);
   }
 });
@@ -208,17 +216,8 @@ audio.addEventListener("error", () => {
   setPlayingState(false);
 });
 
-console.log("script loaded", audio.currentSrc);
-
-playBtn.addEventListener("click", async () => {
-  try {
-    await audio.play();
-  } catch (err) {
-    console.error("play() failed:", err, "src:", audio.currentSrc);
-  }
-});
-
-audio.addEventListener("error", () => {
-  console.error("media error:", audio.error?.code, audio.currentSrc);
-});
+/* autoplay unlock */
+window.addEventListener("load", tryAutoplay);
+document.addEventListener("pointerdown", tryAutoplay, { once: true });
+document.addEventListener("keydown", tryAutoplay, { once: true });
 
