@@ -274,8 +274,10 @@ button:hover{
 }
 
 .audio-top{
+    width:100%;
     display:flex;
     align-items:center;
+    justify-content:center;
     gap:18px;
 }
 
