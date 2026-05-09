@@ -209,22 +209,14 @@ muteBtn.addEventListener("click", () => {
 
 });
 
-window.addEventListener("load", async () => {
-
-    try{
-
-        audio.muted = true;
-
-        await audio.play();
-
-        setTimeout(() => {
-            audio.muted = false;
-        }, 500);
-
-    } catch(err){
-
-        console.log("Autoplay blocked");
-
+playBtn.addEventListener("click", async () => {
+    try {
+        if (audio.paused) {
+            await audio.play();
+        } else {
+            audio.pause();
+        }
+    } catch (err) {
+        console.log("Play blocked:", err);
     }
-
 });
