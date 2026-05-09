@@ -272,3 +272,52 @@ button:hover{
         height:22px;
     }
 }
+
+.audio-top{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.audio-controls{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+}
+
+.circle-btn{
+    width:58px;
+    height:58px;
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:1.05rem;
+    padding:0;
+}
+
+.track-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    min-width:0;
+}
+
+.track-info{
+    flex:1;
+    min-width:0;
+}
+
+@media(max-width:700px){
+
+    .audio-top{
+        align-items:flex-start;
+    }
+
+    .circle-btn{
+        width:52px;
+        height:52px;
+    }
+}
