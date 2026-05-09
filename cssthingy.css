@@ -173,6 +173,7 @@ button:hover{
 
     position:relative;
     z-index:2;
+    align-self:stretch;
 }
 
 .disc{
